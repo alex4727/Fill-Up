@@ -1,1 +1,347 @@
-Hello! Fill-Up project page is currently under construction. Please visit after 2023-06-11.
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Filling up long-tailed data with synthetic images from generative model can signiciantly improve the recognition ability.">
+  <meta name="keywords" content="Long-tailed recognition, Synthetic data">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fill-Up</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="font-size: 44px;">Fill-Up: Balancing Long-Tailed Data with Generative Models</h1>
+
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              <a href="https://alex4727.github.io/">Joonghyuk Shin</a>,</span>
+            <span class="author-block">
+              <a href="https://mingukkang.github.io/">Minguk Kang</a>,</span>
+            <span class="author-block">
+              <a href="https://jaesik.info/">Jaesik Park</a></span>
+          </div>
+
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">Pohang University of Science and Technology (POSTECH)</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="static/paper/Fill-Up.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/alex4727/Fill-Up"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code & Data</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="#bibtex"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-obp"></i>
+                  </span>
+                  <span>BibTex</span>
+                </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/alex4727/Fill-Up"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <img id="teaser" src="./static/images/framework.jpg" alt="Teaser" style="width: 80%" class="interpolation-image">
+        <div class="is-size-5" style="width: 85%; margin-left: auto; margin-right: auto;">
+          We propose a two-stage training procedure for long-tailed recognition based on the fill-up operation with generative models.
+          With synthetic images from textual-inverted tokens and Balanced Softmax loss, our method achieves state-of-the-art results on standard long-tailed benchmarks when trained from scratch.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Modern text-to-image synthesis models have achieved an exceptional level of photorealism, generating high-quality images from arbitrary text descriptions. In light of the impressive synthesis ability, several studies have exhibited promising results in exploiting generated data for image recognition. However, directly supplementing data-hungry situations in the real-world (<i>e.g.</i> few-shot or long-tailed scenarios) with existing approaches result in marginal performance gains, as they suffer to thoroughly reflect the distribution of the real data. Through extensive experiments, this paper proposes a new image synthesis pipeline for long-tailed situations using Textual Inversion. The study demonstrates that generated images from textual-inverted text tokens effectively aligns with the real domain, significantly enhancing the recognition ability of a standard ResNet50 backbone. We also show that real-world data imbalance scenarios can be successfully mitigated by filling up the imbalanced data with synthetic images. In conjunction with techniques in the area of long-tailed recognition, our method achieves state-of-the-art results on standard long-tailed benchmarks when trained from scratch.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-2">Results</h2>
+
+        <img height="100%" src="https://instruct-pix2pix.timothybrooks.com/landscape.jpg">
+          Note that isolated changes also bring along
+          accompanying contextual effects: the addition of boats also adds wind ripples in the water, and the added
+          city skyline is reflected on the lake.
+        
+ -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered"> 
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Exploring Diverse Generation Methods for Fill-Up</h2>
+          <img src="./static/images/four_generators.jpg" style="width: 100%;" class="interpolation-image">
+          <img src="./static/images/experimental0.png">
+        <br>
+        Recent large-scale generative models allow various ways to generate synthetic images. 
+        To find the most efficient way to generate synthetic samples, we try prompt-to-image (<i>Single template, CLIP templates, T5, Flan T5-XXL</i>), image-to-image (<i>Image Variation, Stable Diffusion Reimagine</i>), and transmodal methods (<i>Captioning model and Textual Inversion</i>). 
+        We use Textual Inversion as our main generation method as it shows the best performance. More details can be found in the paper.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered"> 
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Experimental Results</h2>
+        <div class="image-container">
+          <img src="./static/images/experimental1.png" style="width: 90%;">
+        </div>
+        <h2 class="caption is-size-6 subtitle has-text-centered" style="margin-top: -10px;">
+          Experimental results for ImageNet-LT and iNaturalist2018-LT.
+          <br>
+          <sup>*</sup> denotes models trained with longer epochs (over 200).
+        </h2>
+        <div class="image-container">
+          <img src="./static/images/experimental2.png" style="width: 90%;">
+        </div>
+        <h2 class="caption is-size-6 subtitle has-text-centered" style="margin-top: -10px;">
+          Experimental results for Places-LT (left) and different synthetic data generation methods on ImageNet-LT (right).
+          <br>
+          <sup>†</sup> denotes models trained from scratch using ResNet50 backbone.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered"> 
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Per Class Accuracies of Fill-Up</h2>
+        <div class="image-container">
+          <img src="./static/images/perclassacc.jpg" style="width: 100%">
+        </div>
+        Compared to other long-tailed techniques, Fill-Up achieves high accuracy on all classes.
+        It excels in learning minority class distribution by employing per-class optimization of text-tokens, surpassing traditional synthetic sample generation methods.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered"> 
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Impact of initial word choice for Textual Inversion</h2>
+        <div class="has-text-centered">
+          <video id="video1"
+          autoplay
+          controls
+          muted
+          preload
+          playsinline
+          width="90%">
+            <source src="./static/videos/output.mp4">
+          </video>
+        </div>
+        <br>
+        Regardless of the initial word choice, we observe Textual Inversion optimization processes converging to similar results.
+        This allows our method to effectively capture the image distribution without any prior knowledge from the text domain (<i>i.e.</i> without any class-related text information). 
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered"> 
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Generated Images</h2>
+
+        <div>
+          <h2 class="title is-4 has-text-centered" style="margin-bottom: 0px;"> Synthetic samples from ImageNet generated through different methods</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <img id="item1" src="./static/images/Picture1.jpg" class="interpolation-image"/>
+            </div>
+            <div class="item">
+              <img id="item2" src="./static/images/Picture2.jpg" class="interpolation-image"/>
+            </div>
+            <div class="item">
+              <img id="item3" src="./static/images/Picture3.jpg" class="interpolation-image"/>
+            </div>
+            <div class="item">
+              <img id="item4" src="./static/images/Picture4.jpg" class="interpolation-image"/>
+            </div>
+          </div>  
+        </div>
+
+        <div>
+          <h2 class="title is-4 has-text-centered" style="margin-top:10px; margin-bottom: 0px;">Synthetic samples from iNaturalist2018 and Places-LT</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item">
+              <img id="item1" src="./static/images/Picture5.jpg" class="interpolation-image"/>
+            </div>
+            <div class="item">
+              <img id="item2" src="./static/images/Picture6.jpg" class="interpolation-image"/>
+            </div>
+          </div>  
+        </div>
+        <br>
+        In general, Textual Inversion method generates images with higher diversity and fidelity than other methods, resulting in improved alignment with the real data distribution. 
+        More images and details for selected class letters can be found in the paper.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title"><a id="bibtex">BibTex</a></h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/paper/Fill-Up.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/alex4727" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website adapted from the following template <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
